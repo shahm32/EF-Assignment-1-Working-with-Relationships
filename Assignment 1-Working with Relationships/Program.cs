@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Assignment_1_Working_with_Relationships;
 using Core;
+using Microsoft.EntityFrameworkCore;
 
 namespace Assignment_1_Working_with_Relationships
 {
@@ -11,6 +8,7 @@ namespace Assignment_1_Working_with_Relationships
     {
         static void Main(string[] args)
         {
+           
 
             using (var context = new DataContext())
             {
@@ -27,8 +25,8 @@ namespace Assignment_1_Working_with_Relationships
 
                 var posttypes = new[]
             {
-                 new PostType { Status = "Active", Name = "Manushi Shah", Description = "My name is Manushi" },
-                new PostType { Status = "InActive", Name = "Prahil", Description = "My name is Prahil" },
+                 new PostType { Status = "Active", Name = "Manushi Shah", Description = "Hi! I m Manushi" },
+                new PostType { Status = "InActive", Name = "Prahil", Description = "Hi! I m Prahil" },
             };
 
 
@@ -39,8 +37,8 @@ namespace Assignment_1_Working_with_Relationships
 
                 var blogTypes = new[]
                 {
-            new BlogType { Status = "Active", Name = "Manushi Shah", Description = "Manushi's BlogType" },
-            new BlogType { Status = "Active", Name = "Prahil", Description = "Prahil's BlogType" },
+            new BlogType { Status = "Active", Name = "Manushi Shah", Description = "Manushi's Blog" },
+            new BlogType { Status = "Active", Name = "Prahil", Description = "Prahil's Blog" },
             };
 
                 context.BlogTypes.AddRange(blogTypes);
@@ -53,8 +51,8 @@ namespace Assignment_1_Working_with_Relationships
 
                 var post = new Post
                 {
-                    Title = "My First Post",
-                    Content = "Hello Everyone, This will be my first Post",
+                    Title = "Check out my First Post",
+                    Content = "Hello Everyone, Check out my first Post",
                     BlogId = blog.Id,
                     PostTypeId = posttypes.First().Id,
                     UserId = users.First().Id,
@@ -67,6 +65,7 @@ namespace Assignment_1_Working_with_Relationships
 
 
             }
+
 
             Console.WriteLine("Hello, World!");
 
